@@ -1,3 +1,16 @@
+# ASSISTERR Documentation
+
+### How to login to Assisterr?
+`https://assisterr.gitbook.io/assisterr/product-guides/login-slm-store`
+### How to find SLM's on Assisterr?
+`https://assisterr.gitbook.io/assisterr/product-guides/slm-store`
+### How to create your own SLM?
+`https://assisterr.gitbook.io/assisterr/product-guides/create-your-first-slm`
+### How to integrate SLM with API?
+`https://assisterr.gitbook.io/assisterr/product-guides/assisterr-slm-integration`
+
+---
+
 # API Documentation
 
 ## Base URL
@@ -27,13 +40,6 @@
 }
 ```
 
-**Request Body (JSON):**
-```json
-{
-  "query": "Your query here"
-}
-```
-
 ### 1. [POST] /api/v1/slm/{handel_name}/chat/stream/
 **Description:** Request to receive a stream (SSE) response from SLM without context binding (without keeping history).
 
@@ -53,3 +59,10 @@
   "query": "Your query here"
 }
 ```
+
+---
+
+# Examples
+
+Examples folder contains examples notebooks on how to use Assisterr SLMs.
+From Basic API usage to SLM as agent like Automatic X poster or Solana onchain bot.
