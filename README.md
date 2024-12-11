@@ -40,7 +40,7 @@
 }
 ```
 
-### 1. [POST] /api/v1/slm/{handel_name}/chat/stream/
+### 2. [POST] /api/v1/slm/{handel_name}/chat/stream/
 **Description:** Request to receive a stream (SSE) response from SLM without context binding (without keeping history).
 
 **Headers:**
@@ -59,6 +59,115 @@
   "query": "Your query here"
 }
 ```
+
+### 3. [POST] /api/v1/slm/{handel_name}/session/create/
+**Description:** Request to receive a session ID.
+
+**Headers:**
+| Header       | Required | Example Value        | Description                |
+|--------------|----------|----------------------|----------------------------|
+| `X-Api-Key`  | Yes      | `your_token`         | API Key for authentication.|
+
+**Path Parameters:**
+| Parameter      | Type   | Required | Description                       |
+|----------------|--------|----------|-----------------------------------|
+| `handel_name`  | string | Yes      | Unique identifier for the slm.    |
+
+**Respponse Body (JSON):**
+```json
+"1234567891234"
+```
+
+
+### 4. [POST] /api/v1/slm/{handel_name}/session/{slm_session_id}/chat/
+**Description:** Request to receive a response from SLM without context binding (with keeping history).
+
+**Headers:**
+| Header       | Required | Example Value                                         | Description                |
+|--------------|----------|-------------------------------------------------------|----------------------------|
+| `X-Api-Key`  | Yes      | `your_token`                                          | API Key for authentication.|
+
+**Path Parameters:**
+| Parameter         | Type   | Required | Description                       |
+|-------------------|--------|----------|-----------------------------------|
+| `handel_name`     | string | Yes      | Unique identifier for the slm.    |
+| `slm_session_id`  | string | Yes      | Unique session identifier.        |
+
+**Request Body (JSON):**
+```json
+{
+  "query": "Your query here"
+}
+```
+
+
+### 5. [POST] /api/v1/slm/{handel_name}/session/{slm_session_id}/chat/
+**Description:** Request to receive a response from SLM without context binding (with keeping history).
+
+**Headers:**
+| Header       | Required | Example Value                                         | Description                |
+|--------------|----------|-------------------------------------------------------|----------------------------|
+| `X-Api-Key`  | Yes      | `your_token`                                          | API Key for authentication.|
+
+**Path Parameters:**
+| Parameter         | Type   | Required | Description                       |
+|-------------------|--------|----------|-----------------------------------|
+| `handel_name`     | string | Yes      | Unique identifier for the slm.    |
+| `slm_session_id`  | string | Yes      | Unique session identifier.        |
+
+**Request Body (JSON):**
+```json
+{
+  "query": "Your query here"
+}
+```
+
+
+### 6. [GET] /api/v1/slm/{handel_name}/session/list/
+**Description:** Request to receive a list of all sessions.
+
+**Headers:**
+| Header       | Required | Example Value                                         | Description                |
+|--------------|----------|-------------------------------------------------------|----------------------------|
+| `X-Api-Key`  | Yes      | `your_token`                                          | API Key for authentication.|
+
+**Path Parameters:**
+| Parameter         | Type   | Required | Description                       |
+|-------------------|--------|----------|-----------------------------------|
+| `handel_name`     | string | Yes      | Unique identifier for the slm.    |
+| `slm_session_id`  | string | Yes      | Unique session identifier.        |
+
+
+
+### 7. [GET] /api/v1/slm/{handel_name}/session/{slm_session_id}/history/
+**Description:** Request to receive a conversation of session.
+
+**Headers:**
+| Header       | Required | Example Value                                         | Description                |
+|--------------|----------|-------------------------------------------------------|----------------------------|
+| `X-Api-Key`  | Yes      | `your_token`                                          | API Key for authentication.|
+
+**Path Parameters:**
+| Parameter         | Type   | Required | Description                       |
+|-------------------|--------|----------|-----------------------------------|
+| `handel_name`     | string | Yes      | Unique identifier for the slm.    |
+| `slm_session_id`  | string | Yes      | Unique session identifier.        |
+
+
+### 8. [DELETE] /api/v1/slm/{handel_name}/session/{slm_session_id}/
+**Description:** Delete session
+
+**Headers:**
+| Header       | Required | Example Value                                         | Description                |
+|--------------|----------|-------------------------------------------------------|----------------------------|
+| `X-Api-Key`  | Yes      | `your_token`                                          | API Key for authentication.|
+
+**Path Parameters:**
+| Parameter         | Type   | Required | Description                       |
+|-------------------|--------|----------|-----------------------------------|
+| `handel_name`     | string | Yes      | Unique identifier for the slm.    |
+| `slm_session_id`  | string | Yes      | Unique session identifier.        |
+
 
 ---
 
