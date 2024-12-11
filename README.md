@@ -102,7 +102,7 @@
 
 
 ### 5. [POST] /api/v1/slm/{handle_name}/session/{slm_session_id}/chat/stream
-**Description:** Request to receive a response from SLM with context binding (with keeping history).
+**Description:** Request to receive a stream (SSE) response from SLM with context binding (with keeping history).
 
 **Headers:**
 | Header       | Required | Example Value                                         | Description                |
