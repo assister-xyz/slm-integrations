@@ -20,7 +20,7 @@
 
 ## Endpoints
 
-### 1. [POST] /api/v1/slm/{handel_name}/chat/
+### 1. [POST] /api/v1/slm/{handle_name}/chat/
 **Description:** Request to receive a response from SLM without context binding (without keeping history).
 
 **Headers:**
@@ -31,7 +31,7 @@
 **Path Parameters:**
 | Parameter      | Type   | Required | Description                       |
 |----------------|--------|----------|-----------------------------------|
-| `handel_name`  | string | Yes      | Unique identifier for the slm.    |
+| `handle_name`  | string | Yes      | Unique identifier for the slm.    |
 
 **Request Body (JSON):**
 ```json
@@ -40,7 +40,7 @@
 }
 ```
 
-### 2. [POST] /api/v1/slm/{handel_name}/chat/stream/
+### 2. [POST] /api/v1/slm/{handle_name}/chat/stream/
 **Description:** Request to receive a stream (SSE) response from SLM without context binding (without keeping history).
 
 **Headers:**
@@ -51,7 +51,7 @@
 **Path Parameters:**
 | Parameter      | Type   | Required | Description                       |
 |----------------|--------|----------|-----------------------------------|
-| `handel_name`  | string | Yes      | Unique identifier for the slm.    |
+| `handle_name`  | string | Yes      | Unique identifier for the slm.    |
 
 **Request Body (JSON):**
 ```json
@@ -60,7 +60,7 @@
 }
 ```
 
-### 3. [POST] /api/v1/slm/{handel_name}/session/create/
+### 3. [POST] /api/v1/slm/{handle_name}/session/create/
 **Description:** Request to receive a session ID.
 
 **Headers:**
@@ -71,7 +71,7 @@
 **Path Parameters:**
 | Parameter      | Type   | Required | Description                       |
 |----------------|--------|----------|-----------------------------------|
-| `handel_name`  | string | Yes      | Unique identifier for the slm.    |
+| `handle_name`  | string | Yes      | Unique identifier for the slm.    |
 
 **Respponse Body (JSON):**
 ```json
@@ -79,8 +79,8 @@
 ```
 
 
-### 4. [POST] /api/v1/slm/{handel_name}/session/{slm_session_id}/chat/
-**Description:** Request to receive a response from SLM without context binding (with keeping history).
+### 4. [POST] /api/v1/slm/{handle_name}/session/{slm_session_id}/chat/
+**Description:** Request to receive a response from SLM with context binding (with keeping history).
 
 **Headers:**
 | Header       | Required | Example Value                                         | Description                |
@@ -90,7 +90,7 @@
 **Path Parameters:**
 | Parameter         | Type   | Required | Description                       |
 |-------------------|--------|----------|-----------------------------------|
-| `handel_name`     | string | Yes      | Unique identifier for the slm.    |
+| `handle_name`     | string | Yes      | Unique identifier for the slm.    |
 | `slm_session_id`  | string | Yes      | Unique session identifier.        |
 
 **Request Body (JSON):**
@@ -101,8 +101,8 @@
 ```
 
 
-### 5. [POST] /api/v1/slm/{handel_name}/session/{slm_session_id}/chat/
-**Description:** Request to receive a response from SLM without context binding (with keeping history).
+### 5. [POST] /api/v1/slm/{handle_name}/session/{slm_session_id}/chat/stream
+**Description:** Request to receive a response from SLM with context binding (with keeping history).
 
 **Headers:**
 | Header       | Required | Example Value                                         | Description                |
@@ -112,7 +112,7 @@
 **Path Parameters:**
 | Parameter         | Type   | Required | Description                       |
 |-------------------|--------|----------|-----------------------------------|
-| `handel_name`     | string | Yes      | Unique identifier for the slm.    |
+| `handle_name`     | string | Yes      | Unique identifier for the slm.    |
 | `slm_session_id`  | string | Yes      | Unique session identifier.        |
 
 **Request Body (JSON):**
@@ -123,7 +123,7 @@
 ```
 
 
-### 6. [GET] /api/v1/slm/{handel_name}/session/list/
+### 6. [GET] /api/v1/slm/{handle_name}/session/list/
 **Description:** Request to receive a list of all sessions.
 
 **Headers:**
@@ -134,12 +134,12 @@
 **Path Parameters:**
 | Parameter         | Type   | Required | Description                       |
 |-------------------|--------|----------|-----------------------------------|
-| `handel_name`     | string | Yes      | Unique identifier for the slm.    |
+| `handle_name`     | string | Yes      | Unique identifier for the slm.    |
 | `slm_session_id`  | string | Yes      | Unique session identifier.        |
 
 
 
-### 7. [GET] /api/v1/slm/{handel_name}/session/{slm_session_id}/history/
+### 7. [GET] /api/v1/slm/{handle_name}/session/{slm_session_id}/history/
 **Description:** Request to receive a conversation of session.
 
 **Headers:**
@@ -150,11 +150,11 @@
 **Path Parameters:**
 | Parameter         | Type   | Required | Description                       |
 |-------------------|--------|----------|-----------------------------------|
-| `handel_name`     | string | Yes      | Unique identifier for the slm.    |
+| `handle_name`     | string | Yes      | Unique identifier for the slm.    |
 | `slm_session_id`  | string | Yes      | Unique session identifier.        |
 
 
-### 8. [DELETE] /api/v1/slm/{handel_name}/session/{slm_session_id}/
+### 8. [DELETE] /api/v1/slm/{handle_name}/session/{slm_session_id}/
 **Description:** Delete session
 
 **Headers:**
@@ -165,7 +165,7 @@
 **Path Parameters:**
 | Parameter         | Type   | Required | Description                       |
 |-------------------|--------|----------|-----------------------------------|
-| `handel_name`     | string | Yes      | Unique identifier for the slm.    |
+| `handle_name`     | string | Yes      | Unique identifier for the slm.    |
 | `slm_session_id`  | string | Yes      | Unique session identifier.        |
 
 
